@@ -1,3 +1,4 @@
+import sys
 import logging
 from loguru import logger
 
@@ -14,8 +15,22 @@ from loguru import logger
 # logging.error("This is an error message")
 # logging.critical("This is a critical message")
 
-logger.debug("This is a debug message")
-logger.info("This is an info message")
-logger.warning("This is a warning")
-logger.error("This is an error")
-logger.critical("This is critical")
+# logger.debug("This is a debug message")
+# logger.info("This is an info message")
+# logger.warning("This is a warning")
+# logger.error("This is an error")
+# logger.critical("This is critical")
+
+# logger.remove(None)
+logger.add(
+    sys.stdout,
+    level="DEBUG",
+    format="{time} {level} {message} {extra}",
+    colorize=True,
+    serialize=False,
+)
+
+print("Setup loguru")
+
+def get_logger():
+    return logger
