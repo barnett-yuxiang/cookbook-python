@@ -23,6 +23,13 @@ class Analyzer(ast.NodeVisitor):
         print(f"Found assignment to: {targets} at line {node.lineno}")
         self.generic_visit(node)
 
+    def visit_Call(self, node):
+        if isinstance(node.func, ast.Name) and node.func.id == 'print':
+            print(f"Found a print statement at line {node.lineno}")
+        self.generic_visit(node)
+
 # Step 4: Use the Visitor to traverse the AST
 analyzer = Analyzer()
 analyzer.visit(tree)
+
+print(ast.dump(tree, indent=4))
