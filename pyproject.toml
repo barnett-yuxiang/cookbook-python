@@ -13,7 +13,9 @@ dependencies = [
     "pydantic (>=2.11.3,<3.0.0)",
     "pydantic[email] (>=2.11.3,<3.0.0)",
     "loguru (>=0.7.3,<0.8.0)",
-    "litellm[proxy] (>=1.67.4.post1,<2.0.0)"
+    "litellm[proxy] (>=1.67.4.post1,<2.0.0)",
+    "tree-sitter (==0.24.0)",
+    "tree-sitter-languages (>=1.10.2,<2.0.0)"
 ]
 
 
